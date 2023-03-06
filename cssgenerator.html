@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>css генератор</title>
+</head>
+<body>
+	<div class="block1">
+		<p>верхний левый угол</p>
+		<input type="range" id="topleft" min="0" max="100" step="2" value="0">
+		<input type="text" id="topleftText">
+	</div>
+<div class="block1">
+		<p>верхний right угол</p>
+		<input type="range" id="topright" min="0" max="100" step="2" value="0">
+		<input type="text" id="toprightText">
+	</div>
+
+<div class="block1">
+		<p>bottom левый угол</p>
+		<input type="range" id="bottomleft" min="0" max="100" step="2" value="0">
+		<input type="text" id="bottomleftText">
+	</div>
+<div class="block1">
+		<p>bottom right угол</p>
+		<input type="range" id="bottomright" min="0" max="100" step="2" value="0">
+		<input type="text" id="bootomrightText">
+	</div>
+
+
+	<div class="bocks" id="bocks" style="width: 200px; height: 100px; background: grey;">
+		
+	</div>
+
+	<script type="text/javascript">
+			
+		let topleft=document.getElementById('topleft');
+			topleft.addEventListener('input',fun1);
+
+		function fun1(){
+			let toplefttext=document.getElementById('topleftText');
+			let bocks=document.getElementById('bocks');
+			toplefttext.value=this.value;
+			bocks.style.borderTopLeftRadius=this.value+'px';
+
+		}
+
+		let topright=document.getElementById('topright');
+			topright.addEventListener('input',righttop);
+		function righttop(){
+			let bocks=document.getElementById('bocks');
+			let toprightText=document.getElementById('toprightText');
+			toprightText.value=this.value;
+			bocks.style.borderTopRightRadius=this.value+'px';
+
+		}
+
+		let bottomleft=document.getElementById('bottomleft');
+			bottomleft.addEventListener('input',botleft);
+		function botleft(){
+			let bocks=document.getElementById('bocks');
+			let bottomleftText=document.getElementById('bottomleftText');
+			bottomleftText.value=this.value;
+			bocks.style.borderBottomLeftRadius=this.value+'px';
+		}
+
+		let bottomright=document.getElementById('bottomright');
+			bottomright.addEventListener('input',botright);
+		function botright(){
+			let bocks=document.getElementById('bocks');
+			let bootomrightText=document.getElementById('bootomrightText');
+			bootomrightText.value=this.value;
+			bocks.style.borderBottomRightRadius=this.value+'px'
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>
